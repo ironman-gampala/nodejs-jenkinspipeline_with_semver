@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-//new commit
-// new commit for kushak
+
 class App extends Component {
   render() {
     return (

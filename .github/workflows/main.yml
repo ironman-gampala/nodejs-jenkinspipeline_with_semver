@@ -1,3 +1,5 @@
+# EXPERIMENT ONLY — not part of the Node/React build.
+# Passes on even calendar months. Useful for playing with required PR checks.
 name: Default pass
 
 on:
@@ -7,15 +9,15 @@ on:
 jobs:
   check_month:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Check if month is even
       id: check_month
-      run: echo "::set-output name=is_even::$(date +'%-m' | awk '{print $1 % 2}')"
-      
+      run: echo "is_even=$(date +'%-m' | awk '{print $1 % 2}')" >> "$GITHUB_OUTPUT"
+
     - name: Print current month
       run: echo "Current month is $(date +'%B')"
-      
+
     - name: Pass check if month is even
       if: ${{ steps.check_month.outputs.is_even == '0' }}
       run: echo "Month is even, check passed"

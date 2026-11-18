@@ -1,3 +1,6 @@
+// Declarative Pipeline for the Node/React demo app.
+// Stages: Build (npm install) → Test (Jest) → Deliver (build + preview) → manual gate → kill preview.
+// Docs: README.md in repo root. Based on Jenkins' Node.js + React npm tutorial.
 pipeline {
     agent {
         docker {
