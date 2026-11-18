@@ -1,7 +1,8 @@
 {
-  "name": "kaushikved-app",
+  "name": "nodejs-jenkinspipeline-with-semver",
   "version": "0.0.0-development",
   "private": false,
+  "description": "Demo React app with a Jenkins Declarative Pipeline and semantic-release (SemVer)",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,10 +17,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/koushikg14/nodeks.git"
+    "url": "https://github.com/ironman-gampala/nodejs-jenkinspipeline_with_semver.git"
   },
+  "bugs": {
+    "url": "https://github.com/ironman-gampala/nodejs-jenkinspipeline_with_semver/issues"
+  },
+  "homepage": "https://github.com/ironman-gampala/nodejs-jenkinspipeline_with_semver#readme",
+  "keywords": [
+    "jenkins",
+    "pipeline",
+    "semantic-release",
+    "semver",
+    "react",
+    "nodejs",
+    "ci-cd"
+  ],
+  "author": "ironman-gampala",
+  "license": "MIT",
   "devDependencies": {
     "semantic-release": "^19.0.3"
   }
 }
-// test

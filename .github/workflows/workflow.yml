@@ -1,3 +1,5 @@
+# EXPERIMENT ONLY — not part of the Node/React build.
+# Fails on odd calendar months. Useful for playing with required PR checks.
 name: Check Month
 
 on:
@@ -7,15 +9,15 @@ on:
 jobs:
   check_month:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Check if month is odd
       id: check_month
-      run: echo "::set-output name=is_odd::$(($(date +'%-m') % 2))"
-      
+      run: echo "is_odd=$(( $(date +'%-m') % 2 ))" >> "$GITHUB_OUTPUT"
+
     - name: Print current month
       run: echo "Current month is $(date +'%B')"
-      
+
     - name: Fail if month is odd
       if: ${{ steps.check_month.outputs.is_odd == '1' }}
-      run: exit 1  # Fail the workflow if month is odd
+      run: exit 1
